@@ -7,6 +7,9 @@ public class Calculator {
 
     private IBodyDensityCalculator bodyDensityCalculator;
 
+    /// <summary>
+    /// The main entry point for the calculator to start measuring.
+    /// </summary>
     public void takeAllMeasurements() {
         System.out.print("Enter your gender (m/f): ");
         String gender = scanner.nextLine();
@@ -23,6 +26,9 @@ public class Calculator {
         calculateBodyFatPercent();
     }
 
+    /// <summary>
+    /// Calculates the body fat percentage based on the measurements taken.
+    /// </summary>
     public void calculateBodyFatPercent() {
         double bodyFatPercent = (495 / bodyDensityCalculator.calculate()) - 450;
 

@@ -5,6 +5,9 @@ package skinfold;
 
 public class App {
 
+    /// <summary>
+    /// The main entry point for the application.
+    /// </summary>
     public static void main(String[] args) {
         new Calculator().takeAllMeasurements();
     }
