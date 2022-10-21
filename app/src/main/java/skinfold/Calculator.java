@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Calculator {
     private Scanner scanner = new Scanner(System.in);
 
-    private IBodyDensityCalculator bodyDensityCalculator;
+    private BodyDensityCalculator bodyDensityCalculator;
 
     /// <summary>
     /// The main entry point for the calculator to start measuring.

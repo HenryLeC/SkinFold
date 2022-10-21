@@ -1,20 +1,20 @@
 package skinfold;
 
-import java.util.Scanner;
-
 /// <summary>
 /// Implements body density calculation for females
 /// </summary>
-public class FemaleBodyDensityCalculator implements IBodyDensityCalculator {
-    private String[] positions = {
-            "Tricep skinfold",
-            "Thigh skinfold",
-            "Suprailiac skinfold",
-            "Gluteal circumference",
-            "Age"
-    };
+public class FemaleBodyDensityCalculator extends BodyDensityCalculator {
+    public FemaleBodyDensityCalculator() {
+        positions = new String[] {
+                "Tricep skinfold",
+                "Thigh skinfold",
+                "Suprailiac skinfold",
+                "Gluteal circumference",
+                "Age"
+        };
 
-    private double[] measurements = new double[positions.length];
+        measurements = new double[positions.length];
+    }
 
     /// <summary>
     /// Calculates the body density based on the measurements taken.
@@ -28,19 +28,5 @@ public class FemaleBodyDensityCalculator implements IBodyDensityCalculator {
         double x5 = measurements[3];
 
         return 1470292 - 0.0009376 * x3 + 0.0000030 * x3 - 0.0001156 * x4 - 0.0005839 * x5;
-    }
-
-    /// <summary>
-    /// Takes the measurements for the body density calculation.
-    /// </summary>
-    public void takeMeasurements() {
-        Scanner scanner = new Scanner(System.in);
-
-        for (int i = 0; i < positions.length; i++) {
-            System.out.print("Enter your " + positions[i] + ": ");
-            measurements[i] = scanner.nextDouble();
-        }
-
-        scanner.close();
     }
 }
